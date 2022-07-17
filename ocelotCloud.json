@@ -1,0 +1,42 @@
+{
+  "ReRoutes": [
+    {
+      "DownstreamPathTemplate": "/api/Auth",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "authorizationservice20220715235255.azurewebsites.net",
+          "Port": "443"
+        }
+      ],
+      "UpstreamPathTemplate": "/Auth",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/AuditChecklist/{auditType}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "auditchecklistservice20220715235843.azurewebsites.net",
+          "Port": "443"
+        }
+      ],
+      "UpstreamPathTemplate": "/AuditChecklist/{auditType}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/AuditSeverity",
+      "DownstreamScheme": "https",
+      "D": null,
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "auditseverityservice20220716001720.azurewebsites.net",
+          "Port": "443"
+        }
+      ],
+      "UpstreamPathTemplate": "/AuditSeverity",
+      "UpstreamHttpMethod": [ "POST" ]
+    }
+  ]
+
+}
